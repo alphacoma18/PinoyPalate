@@ -16,9 +16,17 @@ interface CarouselItem {
 
 const carouselItems: CarouselItem[] = [
     {
-        src: "hero-image.jpg",
-        alt: "Google",
+        src: "hero-image-1.png",
+        alt: "Filipino Cuisine",
     },
+    {
+        src: "hero-image-2.jpg",
+        alt: "Filipino Cuisine",
+    },
+    {
+        src: "hero-image-3.jpg",
+        alt: "Filipino Cuisine",
+    }
 ];
 
 const HeroCarousel: React.FC = () => {

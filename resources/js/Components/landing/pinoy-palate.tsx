@@ -24,88 +24,10 @@ To read more about using these font, please visit the Next.js documentation:
 - Pages Directory: https://nextjs.org/docs/pages/building-your-application/optimizing/fonts
 **/
 import { Button } from "@/Components/ui/button";
-
+import getImagePath from "@/lib/getImagePath";
 export function PinoyPalate() {
   return (
     <div className="flex flex-col min-h-dvh">
-      {/* <header className="px-4 lg:px-6 h-14 flex items-center bg-[#F0E9E5]">
-        <a href="#" className="flex items-center justify-center">
-          <PinIcon className="size-6 text-[#A38D7E]" />
-          <span className="sr-only">PinoyPalate</span>
-        </a>
-        <nav className="ml-auto flex gap-4 sm:gap-6">
-          <a
-            href="#"
-            className="text-sm font-medium hover:underline underline-offset-4 text-[#A38D7E]"
-
-          >
-            Features
-          </a>
-          <a
-            href="#"
-            className="text-sm font-medium hover:underline underline-offset-4 text-[#A38D7E]"
-
-          >
-            Pricing
-          </a>
-          <a
-            href="#"
-            className="text-sm font-medium hover:underline underline-offset-4 text-[#A38D7E]"
-
-          >
-            About
-          </a>
-          <a
-            href="#"
-            className="text-sm font-medium hover:underline underline-offset-4 text-[#A38D7E]"
-
-          >
-            Contact
-          </a>
-        </nav>
-      </header> */}
-      {/* <section className="w-full pt-12 md:pt-24 lg:pt-32 bg-[#F0E9E5]">
-        <div className="container space-y-10 xl:space-y-16">
-          <div className="grid max-w-[1300px] mx-auto gap-4 px-4 sm:px-6 md:px-10 md:grid-cols-2 md:gap-16">
-            <div className="flex flex-col items-start space-y-4">
-              <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-6xl/none text-[#A38D7E]">
-                  Discover the Flavors of the Philippines
-                </h1>
-                <p className="max-w-[600px] text-[#7E7E7E] md:text-xl">
-                  Streamline your restaurant operations and delight your customers with PinoyPalate, the ultimate
-                  restaurant management app.
-                </p>
-              </div>
-              <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                <a
-                  href="#"
-                  className="inline-flex h-10 items-center justify-center rounded-md bg-[#A38D7E] px-8 text-sm font-medium text-[#F0E9E5] shadow transition-colors hover:bg-[#8B7667] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-
-                >
-                  Get Started
-                </a>
-                <a
-                  href="#"
-                  className="inline-flex h-10 items-center justify-center rounded-md border border-[#A38D7E] bg-[#F0E9E5] px-8 text-sm font-medium text-[#A38D7E] shadow-sm transition-colors hover:bg-[#D9D1CB] hover:text-[#8B7667] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-
-                >
-                  Learn More
-                </a>
-              </div>
-            </div>
-            <div>
-              <img
-                src="/placeholder.svg"
-                width="800"
-                height="600"
-                alt="Hero"
-                className="mx-auto aspect-[4/3] overflow-hidden rounded-xl object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section> */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-[#F0E9E5]">
         <div className="container space-y-12 px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -122,70 +44,70 @@ export function PinoyPalate() {
           <div className="mx-auto grid items-start gap-6 sm:max-w-4xl sm:grid-cols-2 md:gap-8 lg:max-w-5xl lg:grid-cols-4">
             <div className="grid gap-1">
               <img
-                src="/placeholder.svg"
+                src={getImagePath("adobo.jpg")}
                 width="400"
                 height="300"
                 alt="Adobo"
                 className="mx-auto aspect-video overflow-hidden rounded-xl object-cover"
               />
-              <h3 className="text-lg font-bold text-[#A38D7E]">Adobo</h3>
+              <h3 className="text-lg font-bold text-[#8b5e3c]">Adobo</h3>
               <p className="text-sm text-[#7E7E7E]">
                 Tender chicken or pork simmered in a savory soy sauce and vinegar marinade.
               </p>
               <div className="flex items-center justify-between">
-                <Button className="bg-[#A38D7E] text-[#F0E9E5] hover:bg-[#8B7667]">Order Now</Button>
-                <span className="text-lg font-bold text-[#A38D7E]">$12.99</span>
+                <Button className="bg-[#8b5e3c] text-[#F0E9E5] hover:bg-[#8B7667]">Order Now</Button>
+                <span className="text-lg font-bold text-[#8b5e3c]">$12.99</span>
               </div>
             </div>
             <div className="grid gap-1">
               <img
-                src="/placeholder.svg"
+                src={getImagePath("lumpia.jpg")}
                 width="400"
                 height="300"
                 alt="Lumpia"
                 className="mx-auto aspect-video overflow-hidden rounded-xl object-cover"
               />
-              <h3 className="text-lg font-bold text-[#A38D7E]">Lumpia</h3>
+              <h3 className="text-lg font-bold text-[#8b5e3c]">Lumpia</h3>
               <p className="text-sm text-[#7E7E7E]">
                 Crispy spring rolls filled with a variety of savory ingredients.
               </p>
               <div className="flex items-center justify-between">
-                <Button className="bg-[#A38D7E] text-[#F0E9E5] hover:bg-[#8B7667]">Order Now</Button>
-                <span className="text-lg font-bold text-[#A38D7E]">$8.99</span>
+                <Button className="bg-[#8b5e3c] text-[#F0E9E5] hover:bg-[#8B7667]">Order Now</Button>
+                <span className="text-lg font-bold text-[#8b5e3c]">$8.99</span>
               </div>
             </div>
             <div className="grid gap-1">
               <img
-                src="/placeholder.svg"
+                src={getImagePath("sinigang.jpg")}
                 width="400"
                 height="300"
                 alt="Sinigang"
                 className="mx-auto aspect-video overflow-hidden rounded-xl object-cover"
               />
-              <h3 className="text-lg font-bold text-[#A38D7E]">Sinigang</h3>
+              <h3 className="text-lg font-bold text-[#8b5e3c]">Sinigang</h3>
               <p className="text-sm text-[#7E7E7E]">
                 A tangy and savory soup made with tamarind, meat, and vegetables.
               </p>
               <div className="flex items-center justify-between">
-                <Button className="bg-[#A38D7E] text-[#F0E9E5] hover:bg-[#8B7667]">Order Now</Button>
-                <span className="text-lg font-bold text-[#A38D7E]">$10.99</span>
+                <Button className="bg-[#8b5e3c] text-[#F0E9E5] hover:bg-[#8B7667]">Order Now</Button>
+                <span className="text-lg font-bold text-[#8b5e3c]">$10.99</span>
               </div>
             </div>
             <div className="grid gap-1">
               <img
-                src="/placeholder.svg"
+                src={getImagePath("halo-halo.jpg")}
                 width="400"
                 height="300"
                 alt="Halo-Halo"
                 className="mx-auto aspect-video overflow-hidden rounded-xl object-cover"
               />
-              <h3 className="text-lg font-bold text-[#A38D7E]">Halo-Halo</h3>
+              <h3 className="text-lg font-bold text-[#8b5e3c]">Halo-Halo</h3>
               <p className="text-sm text-[#7E7E7E]">
                 A refreshing dessert made with shaved ice, sweetened beans, and tropical fruits.
               </p>
               <div className="flex items-center justify-between">
-                <Button className="bg-[#A38D7E] text-[#F0E9E5] hover:bg-[#8B7667]">Order Now</Button>
-                <span className="text-lg font-bold text-[#A38D7E]">$6.99</span>
+                <Button className="bg-[#8b5e3c] text-[#F0E9E5] hover:bg-[#8B7667]">Order Now</Button>
+                <span className="text-lg font-bold text-[#8b5e3c]">$6.99</span>
               </div>
             </div>
           </div>
@@ -195,7 +117,7 @@ export function PinoyPalate() {
         <div className="container space-y-12 px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-[#A38D7E]">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-[#8b5e3c]">
                 What Our Customers Say
               </h2>
               <p className="max-w-[900px] text-[#7E7E7E] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
@@ -206,11 +128,11 @@ export function PinoyPalate() {
           <div className="mx-auto grid items-start gap-8 sm:max-w-4xl sm:grid-cols-2 md:gap-12 lg:max-w-5xl lg:grid-cols-3">
             <div className="grid gap-4">
               <div className="flex items-center gap-4">
-                <div className="rounded-full w-12 h-12 bg-[#D9D1CB] flex items-center justify-center text-[#A38D7E] font-bold">
+                <div className="rounded-full w-12 h-12 bg-[#D9D1CB] flex items-center justify-center text-[#8b5e3c] font-bold">
                   JD
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold text-[#A38D7E]">John Doe</h4>
+                  <h4 className="text-lg font-bold text-[#8b5e3c]">John Doe</h4>
                   <p className="text-sm text-[#7E7E7E]">Restaurant Owner</p>
                 </div>
               </div>
@@ -222,11 +144,11 @@ export function PinoyPalate() {
             </div>
             <div className="grid gap-4">
               <div className="flex items-center gap-4">
-                <div className="rounded-full w-12 h-12 bg-[#D9D1CB] flex items-center justify-center text-[#A38D7E] font-bold">
+                <div className="rounded-full w-12 h-12 bg-[#D9D1CB] flex items-center justify-center text-[#8b5e3c] font-bold">
                   SM
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold text-[#A38D7E]">Sarah Martinez</h4>
+                  <h4 className="text-lg font-bold text-[#8b5e3c]">Sarah Martinez</h4>
                   <p className="text-sm text-[#7E7E7E]">Restaurant Manager</p>
                 </div>
               </div>
@@ -238,11 +160,11 @@ export function PinoyPalate() {
             </div>
             <div className="grid gap-4">
               <div className="flex items-center gap-4">
-                <div className="rounded-full w-12 h-12 bg-[#D9D1CB] flex items-center justify-center text-[#A38D7E] font-bold">
+                <div className="rounded-full w-12 h-12 bg-[#D9D1CB] flex items-center justify-center text-[#8b5e3c] font-bold">
                   KT
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold text-[#A38D7E]">Kim Tan</h4>
+                  <h4 className="text-lg font-bold text-[#8b5e3c]">Kim Tan</h4>
                   <p className="text-sm text-[#7E7E7E]">Head Chef</p>
                 </div>
               </div>
@@ -258,10 +180,10 @@ export function PinoyPalate() {
       <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t bg-[#F0E9E5]">
         <p className="text-xs text-[#7E7E7E]">&copy; 2024 PinoyPalate. All rights reserved.</p>
         <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-          <a href="#" className="text-xs hover:underline underline-offset-4 text-[#A38D7E]">
+          <a href="#" className="text-xs hover:underline underline-offset-4 text-[#8b5e3c]">
             Terms of Service
           </a>
-          <a href="#" className="text-xs hover:underline underline-offset-4 text-[#A38D7E]">
+          <a href="#" className="text-xs hover:underline underline-offset-4 text-[#8b5e3c]">
             Privacy
           </a>
         </nav>
