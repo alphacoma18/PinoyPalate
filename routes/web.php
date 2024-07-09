@@ -14,6 +14,11 @@ Route::get('/', function () {
     ]);
 });
 
+
+Route::get('/signin', function () {
+    return Inertia::render('Signin');
+});
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
