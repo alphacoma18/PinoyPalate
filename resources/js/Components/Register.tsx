@@ -38,9 +38,11 @@ export function RegisterComponent() {
     name: "",
     email: "",
     password: "",
+    phone: "",
     location: "",
     city: "",
     municipality: "",
+    street: "",
     preferedCuisines: [],
   });
 
@@ -121,6 +123,24 @@ export function RegisterComponent() {
               className="block w-full rounded-md border border-[#D9D1CB] bg-[#F0E9E5] px-3 py-2 text-[#7E7E7E] placeholder-[#B3B3B3] shadow-sm focus:border-[#A38D7E] focus:outline-none focus:ring-1 focus:ring-[#A38D7E] sm:text-sm"
               required
             />
+          </div>          <div className="space-y-2">
+            <label
+              htmlFor="phone"
+              className="text-sm font-medium text-[#A38D7E]"
+            >
+              Phone
+            </label>
+            <input
+              id="phone"
+              type="text"
+              placeholder="09xxxxxxxxx"
+              onChange={(e) =>
+                setData("phone", e.target.value)
+              }
+              value={data.phone}
+              className="block w-full rounded-md border border-[#D9D1CB] bg-[#F0E9E5] px-3 py-2 text-[#7E7E7E] placeholder-[#B3B3B3] shadow-sm focus:border-[#A38D7E] focus:outline-none focus:ring-1 focus:ring-[#A38D7E] sm:text-sm"
+              required
+            />
           </div>
           <div className="space-y-2">
             <label
@@ -177,6 +197,24 @@ export function RegisterComponent() {
                 setData("municipality", e.target.value)
               }
               value={data.municipality}
+              className="block w-full rounded-md border border-[#D9D1CB] bg-[#F0E9E5] px-3 py-2 text-[#7E7E7E] placeholder-[#B3B3B3] shadow-sm focus:border-[#A38D7E] focus:outline-none focus:ring-1 focus:ring-[#A38D7E] sm:text-sm"
+              required
+            />
+          </div>          <div className="space-y-2">
+            <label
+              htmlFor="street"
+              className="text-sm font-medium text-[#A38D7E]"
+            >
+              Street
+            </label>
+            <input
+              id="street"
+              type="text"
+              placeholder="123 Street"
+              onChange={(e) =>
+                setData("street", e.target.value)
+              }
+              value={data.street}
               className="block w-full rounded-md border border-[#D9D1CB] bg-[#F0E9E5] px-3 py-2 text-[#7E7E7E] placeholder-[#B3B3B3] shadow-sm focus:border-[#A38D7E] focus:outline-none focus:ring-1 focus:ring-[#A38D7E] sm:text-sm"
               required
             />

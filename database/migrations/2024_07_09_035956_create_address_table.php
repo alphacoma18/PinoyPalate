@@ -15,11 +15,11 @@ class CreateAddressTable extends Migration
     {
         Schema::create('address', function (Blueprint $table) {
             $table->id(); // Auto-incrementing ID
-            $table->string('region', 20)->notNullable();
-            $table->string('location', 20)->notNullable();
+            $table->unsignedBigInteger('region_id')->notNullable();
+            $table->foreign('region_id')->references('id')->on('region')->onDelete('cascade');
+            $table->string('city', 20)->notNullable();
             $table->string('municipality')->notNullable();
             $table->string('street', 255)->notNullable();
-            $table->integer('post_code')->notNullable();
         });
     }
     /**

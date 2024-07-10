@@ -5,20 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property string $region
- * @property string $location
- * @property string $municipality
- * @property string $street
- * @property int    $post_code
+ * @property int $created_at
+ * @property int $updated_at
  */
-class Address extends Model
+class Orders extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'address';
+    protected $table = 'orders';
 
     /**
      * The primary key for the model.
@@ -33,7 +30,7 @@ class Address extends Model
      * @var array
      */
     protected $fillable = [
-        'region', 'location', 'municipality', 'street', 'post_code'
+        'user_id', 'restaurant_id', 'order_total', 'order_status_id', 'created_at', 'updated_at'
     ];
 
     /**
@@ -51,7 +48,7 @@ class Address extends Model
      * @var array
      */
     protected $casts = [
-        'region' => 'string', 'location' => 'string', 'municipality' => 'string', 'street' => 'string', 'post_code' => 'int'
+        'created_at' => 'timestamp', 'updated_at' => 'timestamp'
     ];
 
     /**
@@ -60,7 +57,7 @@ class Address extends Model
      * @var array
      */
     protected $dates = [
-        
+        'created_at', 'updated_at'
     ];
 
     /**

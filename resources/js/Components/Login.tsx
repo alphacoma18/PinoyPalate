@@ -92,7 +92,7 @@ export default function LoginComponent() {
           <div className="text-center text-sm text-[#7E7E7E]">
             Don't have an account?{" "}
             <a
-              href="/signup"
+              href="/register"
               className="font-medium text-[#A38D7E] hover:underline"
             >
               Sign up
