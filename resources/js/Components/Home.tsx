@@ -24,10 +24,69 @@ To read more about using these font, please visit the Next.js documentation:
 - Pages Directory: https://nextjs.org/docs/pages/building-your-application/optimizing/fonts
 **/
 
+const foodMenu = [
+  {
+    name: "Adobo",
+    price: "150",
+    rating: "4.8",
+    location: "Luzon, Manila",
+  },
+  {
+    name: "Sinigang",
+    price: "180",
+    rating: "4.6",
+    location: "Visayas, Cebu",
+  },
+  {
+    name: "Lumpia",
+    price: "100",
+    rating: "4.7",
+    location: "Visayas, Cebu",
+  },
+  {
+    name: "Halo-Halo",
+    price: "120",
+    rating: "4.9",
+    location: "Mindanao, Davao",
+  },
+];
+
+const Menu = () => {
+  return (
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 p-3">
+      {foodMenu.map((food) => (
+        <div className="bg-white rounded-lg shadow-md overflow-hidden">
+          <div className="relative">
+            <img
+              src="/placeholder.svg"
+              alt={food.name}
+              width={400}
+              height={300}
+              className="w-full h-48 object-cover"
+            />
+            <div className="absolute bottom-2 left-2 bg-[#8b5e3c] text-white px-2 py-1 rounded-md text-xs">
+              ₱{food.price}
+            </div>
+            <div className="absolute top-2 right-2 bg-[#8b5e3c] text-white px-2 py-1 rounded-md text-xs">
+              {food.rating}
+            </div>
+          </div>
+          <div className="p-4 flex flex-col items-center">
+            <h3 className="text-lg font-bold mb-2 text-[#8b5e3c]">{food.name}</h3>
+            <p className="text-sm text-[#8b5e3c]">{food.location}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+
 export function HomeComponent() {
   return (
     <div className="flex flex-col min-h-screen bg-[#F0E9E5]">
-      <header className="bg-[#f5f5f5] shadow-md hidden sm:flex items-center justify-between px-6 py-4">
+      <header className="w-full bg-[#f5f5f5] shadow-md">
+        <div className="container w-full hidden sm:flex items-center justify-between px-6 py-4">
         <div className="flex items-center space-x-4">
           <a href="#" className="flex items-center space-x-2">
             <MountainIcon className="w-6 h-6 text-[#8b5e3c]" />
@@ -67,7 +126,8 @@ export function HomeComponent() {
           >
             Account
           </a>
-        </nav>
+          </nav>
+        </div>
       </header>
       <nav className="shadow-md z-10 bg-[#F0E9E5] fixed bottom-0 left-0 right-0 sm:hidden flex justify-around items-center py-2">
         <a

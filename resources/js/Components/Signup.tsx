@@ -26,7 +26,7 @@ To read more about using these font, please visit the Next.js documentation:
 import axios from "axios";
 import { useState } from "react";
 
-export function Register() {
+export function SignupComponent() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
