@@ -25,7 +25,7 @@ const navLinks: NavLink[] = [
   },
   {
     name: "Signin",
-    href: "/signin",
+    href: "/login",
   },
 ];
 
