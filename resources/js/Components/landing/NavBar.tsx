@@ -31,7 +31,7 @@ const navLinks: NavLink[] = [
 
 const NavBar: React.FC = () => {
   return (
-    <header className="fixed top-0 left-0 z-50 w-full text-[#8b5e3c] bg-[#F0E9E5]">
+    <header className="fixed top-0 left-0 z-50 w-full text-[#8b5e3c] bg-[#F0E9E5] shadow-md">
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
         <a className="flex items-center gap-2" href="#">
           <MountainIcon className="h-6 w-6" />

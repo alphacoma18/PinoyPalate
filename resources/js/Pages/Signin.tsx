@@ -1,10 +1,11 @@
+import SigninComponent from "@/Components/Signin";
 import { Head } from "@inertiajs/react";
 const Signin = () => {
     return (
-        <div>
+        <>
             <Head title="Signin" />
-            <h1>Signin</h1>
-        </div>
+            <SigninComponent />
+        </>
     );
 };
 
