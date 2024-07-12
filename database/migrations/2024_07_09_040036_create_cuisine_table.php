@@ -9,13 +9,11 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-
     public function up(): void
     {
-        Schema::create('region', function (Blueprint $table) {
+        Schema::create('cuisine', function (Blueprint $table) {
             $table->id();
-            $table->string('acronym', 15)->notNullable()->unique();
-            $table->string('name', 50)->notNullable()->unique();
+            $table->string('name', 50)->unique()->notNullable();
         });
     }
 
@@ -24,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('region');
+        Schema::dropIfExists('cuisine');
     }
 };

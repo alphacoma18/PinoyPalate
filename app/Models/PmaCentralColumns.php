@@ -5,26 +5,30 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property string $region
- * @property string $municipality
- * @property string $street
- * @property int    $post_code
+ * @property string  $db_name
+ * @property string  $col_name
+ * @property string  $col_type
+ * @property string  $col_length
+ * @property string  $col_collation
+ * @property string  $col_extra
+ * @property string  $col_default
+ * @property boolean $col_isNull
  */
-class Address extends Model
+class PmaCentralColumns extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'address';
+    protected $table = 'pma__central_columns';
 
     /**
      * The primary key for the model.
      *
      * @var string
      */
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'db_name';
 
     /**
      * Attributes that should be mass-assignable.
@@ -32,7 +36,7 @@ class Address extends Model
      * @var array
      */
     protected $fillable = [
-        'region_id',  'city', 'municipality', 'street',
+        'col_name', 'col_type', 'col_length', 'col_collation', 'col_isNull', 'col_extra', 'col_default'
     ];
 
     /**
@@ -41,7 +45,7 @@ class Address extends Model
      * @var array
      */
     protected $hidden = [
-
+        
     ];
 
     /**
@@ -50,7 +54,7 @@ class Address extends Model
      * @var array
      */
     protected $casts = [
-        'region_id' => 'string', 'city' => 'string', 'municipality' => 'string', 'street' => 'string'
+        'db_name' => 'string', 'col_name' => 'string', 'col_type' => 'string', 'col_length' => 'string', 'col_collation' => 'string', 'col_isNull' => 'boolean', 'col_extra' => 'string', 'col_default' => 'string'
     ];
 
     /**
@@ -59,7 +63,7 @@ class Address extends Model
      * @var array
      */
     protected $dates = [
-
+        
     ];
 
     /**

@@ -5,26 +5,22 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property string $region
- * @property string $municipality
- * @property string $street
- * @property int    $post_code
  */
-class Address extends Model
+class Customer extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'address';
+    protected $table = 'customer';
 
     /**
      * The primary key for the model.
      *
      * @var string
      */
-    protected $primaryKey = 'id';
+    protected $primaryKey = '';
 
     /**
      * Attributes that should be mass-assignable.
@@ -32,7 +28,7 @@ class Address extends Model
      * @var array
      */
     protected $fillable = [
-        'region_id',  'city', 'municipality', 'street',
+        'id'
     ];
 
     /**
@@ -41,7 +37,7 @@ class Address extends Model
      * @var array
      */
     protected $hidden = [
-
+        
     ];
 
     /**
@@ -50,7 +46,7 @@ class Address extends Model
      * @var array
      */
     protected $casts = [
-        'region_id' => 'string', 'city' => 'string', 'municipality' => 'string', 'street' => 'string'
+        
     ];
 
     /**
@@ -59,7 +55,7 @@ class Address extends Model
      * @var array
      */
     protected $dates = [
-
+        
     ];
 
     /**

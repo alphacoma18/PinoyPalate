@@ -9,13 +9,12 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-
     public function up(): void
     {
-        Schema::create('region', function (Blueprint $table) {
+        Schema::create('restaurant_owner', function (Blueprint $table) {
             $table->id();
-            $table->string('acronym', 15)->notNullable()->unique();
-            $table->string('name', 50)->notNullable()->unique();
+            $table->unsignedBigInteger('owner_id')->notNullable();
+            $table->foreign('owner_id')->references('id')->on('user')->onDelete('cascade');
         });
     }
 
@@ -24,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('region');
+        Schema::dropIfExists('preferredCuisine');
     }
 };

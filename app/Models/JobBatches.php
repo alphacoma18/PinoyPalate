@@ -5,19 +5,25 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property string $region
- * @property string $municipality
- * @property string $street
- * @property int    $post_code
+ * @property string $id
+ * @property string $name
+ * @property string $failed_job_ids
+ * @property string $options
+ * @property int    $total_jobs
+ * @property int    $pending_jobs
+ * @property int    $failed_jobs
+ * @property int    $cancelled_at
+ * @property int    $created_at
+ * @property int    $finished_at
  */
-class Address extends Model
+class JobBatches extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'address';
+    protected $table = 'job_batches';
 
     /**
      * The primary key for the model.
@@ -32,7 +38,7 @@ class Address extends Model
      * @var array
      */
     protected $fillable = [
-        'region_id',  'city', 'municipality', 'street',
+        'name', 'total_jobs', 'pending_jobs', 'failed_jobs', 'failed_job_ids', 'options', 'cancelled_at', 'created_at', 'finished_at'
     ];
 
     /**
@@ -41,7 +47,7 @@ class Address extends Model
      * @var array
      */
     protected $hidden = [
-
+        
     ];
 
     /**
@@ -50,7 +56,7 @@ class Address extends Model
      * @var array
      */
     protected $casts = [
-        'region_id' => 'string', 'city' => 'string', 'municipality' => 'string', 'street' => 'string'
+        'id' => 'string', 'name' => 'string', 'total_jobs' => 'int', 'pending_jobs' => 'int', 'failed_jobs' => 'int', 'failed_job_ids' => 'string', 'options' => 'string', 'cancelled_at' => 'int', 'created_at' => 'int', 'finished_at' => 'int'
     ];
 
     /**
@@ -59,7 +65,7 @@ class Address extends Model
      * @var array
      */
     protected $dates = [
-
+        
     ];
 
     /**

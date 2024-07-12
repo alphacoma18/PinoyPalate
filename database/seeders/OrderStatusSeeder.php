@@ -1,7 +1,9 @@
 <?php
 
+namespace Database\Seeders;
+
+use App\Models\OrderStatus;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class OrderStatusSeeder extends Seeder
 {
@@ -12,10 +14,10 @@ class OrderStatusSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('orderstatus')->insert([
+        OrderStatus::create([
             ['status_name' => 'Pending'],
             ['status_name' => 'Confirmed'],
-            ['status_name' => 'Shipped'],
+            ['status_name' => 'On The Way'],
             ['status_name' => 'Delivered'],
             ['status_name' => 'Cancelled']
         ]);

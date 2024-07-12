@@ -1,0 +1,77 @@
+[
+    {
+        "id": 1,
+        "acronym": "Region I",
+        "name": "Ilocos Region"
+    },
+    {
+        "id": 2,
+        "acronym": "Region II",
+        "name": "Cagayan Valley"
+    },
+    {
+        "id": 3,
+        "acronym": "Region III",
+        "name": "Central Luzon"
+    },
+    {
+        "id": 4,
+        "acronym": "Region IV-A",
+        "name": "Calabarzon"
+    },
+    {
+        "id": 5,
+        "acronym": "Region IV-B",
+        "name": "Mimaropa"
+    },
+    {
+        "id": 6,
+        "acronym": "Region V",
+        "name": "Bicol Region"
+    },
+    {
+        "id": 7,
+        "acronym": "Region VI",
+        "name": "Western Visayas"
+    },
+    {
+        "id": 8,
+        "acronym": "Region VII",
+        "name": "Central Visayas"
+    },
+    {
+        "id": 9,
+        "acronym": "Region VIII",
+        "name": "Eastern Visayas"
+    },
+    {
+        "id": 10,
+        "acronym": "Region IX",
+        "name": "Zamboanga Peninsula"
+    },
+    {
+        "id": 11,
+        "acronym": "Region X",
+        "name": "Northern Mindanao"
+    },
+    {
+        "id": 12,
+        "acronym": "Region XI",
+        "name": "Davao Region"
+    },
+    {
+        "id": 13,
+        "acronym": "Region XII",
+        "name": "Soccsksargen"
+    },
+    {
+        "id": 14,
+        "acronym": "Region XIII",
+        "name": "Caraga"
+    },
+    {
+        "id": 15,
+        "acronym": "Region XIV",
+        "name": "Bangsamoro Autonomous Region in Muslim Mindanao"
+    }
+]

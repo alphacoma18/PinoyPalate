@@ -5,26 +5,31 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property string $region
- * @property string $municipality
- * @property string $street
- * @property int    $post_code
+ * @property string   $db_name
+ * @property string   $table_name
+ * @property string   $schema_snapshot
+ * @property string   $schema_sql
+ * @property string   $data_sql
+ * @property int      $version
+ * @property DateTime $date_created
+ * @property DateTime $date_updated
+ * @property boolean  $tracking_active
  */
-class Address extends Model
+class PmaTracking extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'address';
+    protected $table = 'pma__tracking';
 
     /**
      * The primary key for the model.
      *
      * @var string
      */
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'db_name';
 
     /**
      * Attributes that should be mass-assignable.
@@ -32,7 +37,7 @@ class Address extends Model
      * @var array
      */
     protected $fillable = [
-        'region_id',  'city', 'municipality', 'street',
+        'table_name', 'version', 'date_created', 'date_updated', 'schema_snapshot', 'schema_sql', 'data_sql', 'tracking', 'tracking_active'
     ];
 
     /**
@@ -41,7 +46,7 @@ class Address extends Model
      * @var array
      */
     protected $hidden = [
-
+        
     ];
 
     /**
@@ -50,7 +55,7 @@ class Address extends Model
      * @var array
      */
     protected $casts = [
-        'region_id' => 'string', 'city' => 'string', 'municipality' => 'string', 'street' => 'string'
+        'db_name' => 'string', 'table_name' => 'string', 'version' => 'int', 'date_created' => 'datetime', 'date_updated' => 'datetime', 'schema_snapshot' => 'string', 'schema_sql' => 'string', 'data_sql' => 'string', 'tracking_active' => 'boolean'
     ];
 
     /**
@@ -59,7 +64,7 @@ class Address extends Model
      * @var array
      */
     protected $dates = [
-
+        'date_created', 'date_updated'
     ];
 
     /**

@@ -12,6 +12,13 @@ class User extends Authenticatable implements MustVerifyEmail
     use HasFactory, Notifiable;
 
     /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'user'; // Specify the table name here
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>

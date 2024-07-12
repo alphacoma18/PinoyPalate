@@ -39,7 +39,7 @@ class Region extends Model
      * @var array
      */
     protected $hidden = [
-        
+
     ];
 
     /**
@@ -57,7 +57,7 @@ class Region extends Model
      * @var array
      */
     protected $dates = [
-        
+
     ];
 
     /**

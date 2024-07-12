@@ -5,26 +5,27 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property string $region
- * @property string $municipality
- * @property string $street
- * @property int    $post_code
+ * @property string $username
+ * @property string $db_name
+ * @property string $table_name
+ * @property string $prefs
+ * @property int    $last_update
  */
-class Address extends Model
+class PmaTableUiprefs extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'address';
+    protected $table = 'pma__table_uiprefs';
 
     /**
      * The primary key for the model.
      *
      * @var string
      */
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'username';
 
     /**
      * Attributes that should be mass-assignable.
@@ -32,7 +33,7 @@ class Address extends Model
      * @var array
      */
     protected $fillable = [
-        'region_id',  'city', 'municipality', 'street',
+        'db_name', 'table_name', 'prefs', 'last_update'
     ];
 
     /**
@@ -41,7 +42,7 @@ class Address extends Model
      * @var array
      */
     protected $hidden = [
-
+        
     ];
 
     /**
@@ -50,7 +51,7 @@ class Address extends Model
      * @var array
      */
     protected $casts = [
-        'region_id' => 'string', 'city' => 'string', 'municipality' => 'string', 'street' => 'string'
+        'username' => 'string', 'db_name' => 'string', 'table_name' => 'string', 'prefs' => 'string', 'last_update' => 'timestamp'
     ];
 
     /**
@@ -59,7 +60,7 @@ class Address extends Model
      * @var array
      */
     protected $dates = [
-
+        'last_update'
     ];
 
     /**

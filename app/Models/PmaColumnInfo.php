@@ -5,19 +5,25 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property string $region
- * @property string $municipality
- * @property string $street
- * @property int    $post_code
+ * @property int    $id
+ * @property string $db_name
+ * @property string $table_name
+ * @property string $column_name
+ * @property string $comment
+ * @property string $mimetype
+ * @property string $transformation
+ * @property string $transformation_options
+ * @property string $input_transformation
+ * @property string $input_transformation_options
  */
-class Address extends Model
+class PmaColumnInfo extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'address';
+    protected $table = 'pma__column_info';
 
     /**
      * The primary key for the model.
@@ -32,7 +38,7 @@ class Address extends Model
      * @var array
      */
     protected $fillable = [
-        'region_id',  'city', 'municipality', 'street',
+        'db_name', 'table_name', 'column_name', 'comment', 'mimetype', 'transformation', 'transformation_options', 'input_transformation', 'input_transformation_options'
     ];
 
     /**
@@ -41,7 +47,7 @@ class Address extends Model
      * @var array
      */
     protected $hidden = [
-
+        
     ];
 
     /**
@@ -50,7 +56,7 @@ class Address extends Model
      * @var array
      */
     protected $casts = [
-        'region_id' => 'string', 'city' => 'string', 'municipality' => 'string', 'street' => 'string'
+        'id' => 'int', 'db_name' => 'string', 'table_name' => 'string', 'column_name' => 'string', 'comment' => 'string', 'mimetype' => 'string', 'transformation' => 'string', 'transformation_options' => 'string', 'input_transformation' => 'string', 'input_transformation_options' => 'string'
     ];
 
     /**
@@ -59,7 +65,7 @@ class Address extends Model
      * @var array
      */
     protected $dates = [
-
+        
     ];
 
     /**

@@ -26,24 +26,18 @@ To read more about using these font, please visit the Next.js documentation:
 import { FormEventHandler, useEffect } from "react";
 import { useForm } from "@inertiajs/react";
 
-const locationOptions = [
-  { label: "Metro Manila" },
-  { label: "Luzon" },
-  { label: "Visayas" },
-  { label: "Mindanao" },
-];
 
 export function RegisterComponent() {
-  const { data, setData, post, reset } = useForm({
-    name: "",
-    email: "",
-    password: "",
-    phone: "",
-    location: "",
-    city: "",
-    municipality: "",
-    street: "",
-    preferedCuisines: [],
+  const { data, setData, post, errors, reset } = useForm({
+    name: "Alpha Romer Coma",
+    email: "kobayashi69000@gmail.com",
+    password: "asdljl1298asd@#&*(",
+    phone: "09878",
+    region: "Region III",
+    city: "Metro Manila",
+    municipality: "Manila",
+    street: "17th Street",
+    preferredCuisines: [],
   });
 
   useEffect(() => {
@@ -55,7 +49,7 @@ export function RegisterComponent() {
   const submit: FormEventHandler = (e) => {
     e.preventDefault();
 
-    post(route("login"));
+    post(route("register"));
   };
 
   return (
@@ -68,6 +62,56 @@ export function RegisterComponent() {
           <h1 className="text-3xl font-bold tracking-tighter text-[#A38D7E] sm:text-4xl">
             Sign up to PinoyPalate
           </h1>
+          {errors.email && (
+            <p className="text-red-500">{errors.email}</p>
+          )}
+          {
+            errors.password && (
+              <p className="text-red-500">{errors.password}</p>
+            )
+          }
+          {
+            errors.name && (
+              <p className="text-red-500">{errors.name}</p>
+            )
+
+          }
+          {
+            errors.phone && (
+              <p className="text-red-500">{errors.phone}</p>
+            )
+
+          }
+          {
+            errors.region && (
+              <p className="text-red-500">{errors.region}</p>
+            )
+
+          }
+          {
+            errors.city && (
+              <p className="text-red-500">{errors.city}</p>
+            )
+
+          }
+          {
+            errors.municipality && (
+              <p className="text-red-500">{errors.municipality}</p>
+            )
+
+          }
+          {
+            errors.street && (
+              <p className="text-red-500">{errors.street}</p>
+            )
+
+          }
+          {
+            errors.preferredCuisines && (
+              <p className="text-red-500">{errors.preferredCuisines}</p>
+            )
+
+          }
           <p className="text-[#7E7E7E]">
             Enter your details to create a new account.
           </p>
@@ -100,6 +144,8 @@ export function RegisterComponent() {
             <input
               id="email"
               type="email"
+              onChange={(e) => setData("email", e.target.value)}
+              value={data.email}
               placeholder="m@example.com"
               className="block w-full rounded-md border border-[#D9D1CB] bg-[#F0E9E5] px-3 py-2 text-[#7E7E7E] placeholder-[#B3B3B3] shadow-sm focus:border-[#A38D7E] focus:outline-none focus:ring-1 focus:ring-[#A38D7E] sm:text-sm"
               required
@@ -123,7 +169,8 @@ export function RegisterComponent() {
               className="block w-full rounded-md border border-[#D9D1CB] bg-[#F0E9E5] px-3 py-2 text-[#7E7E7E] placeholder-[#B3B3B3] shadow-sm focus:border-[#A38D7E] focus:outline-none focus:ring-1 focus:ring-[#A38D7E] sm:text-sm"
               required
             />
-          </div>          <div className="space-y-2">
+          </div>{" "}
+          <div className="space-y-2">
             <label
               htmlFor="phone"
               className="text-sm font-medium text-[#A38D7E]"
@@ -134,9 +181,7 @@ export function RegisterComponent() {
               id="phone"
               type="text"
               placeholder="09xxxxxxxxx"
-              onChange={(e) =>
-                setData("phone", e.target.value)
-              }
+              onChange={(e) => setData("phone", e.target.value)}
               value={data.phone}
               className="block w-full rounded-md border border-[#D9D1CB] bg-[#F0E9E5] px-3 py-2 text-[#7E7E7E] placeholder-[#B3B3B3] shadow-sm focus:border-[#A38D7E] focus:outline-none focus:ring-1 focus:ring-[#A38D7E] sm:text-sm"
               required
@@ -144,27 +189,21 @@ export function RegisterComponent() {
           </div>
           <div className="space-y-2">
             <label
-              htmlFor="location"
+              htmlFor="region"
               className="text-sm font-medium text-[#A38D7E]"
             >
-              Location
+              Region
             </label>
-            <select
-              id="location"
+            <input
+              id="region"
+              type="text"
+              placeholder="Manila"
+              onChange={(e) => setData("region", e.target.value)}
+              value={data.region}
               className="block w-full rounded-md border border-[#D9D1CB] bg-[#F0E9E5] px-3 py-2 text-[#7E7E7E] placeholder-[#B3B3B3] shadow-sm focus:border-[#A38D7E] focus:outline-none focus:ring-1 focus:ring-[#A38D7E] sm:text-sm"
               required
-              onChange={(e) =>
-                setData("location", e.target.value)
-              }
-              value={data.location}
-            >
-              {locationOptions.map((option, index) => (
-                <option key={index} value={option.label}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
-          </div>
+            />
+          </div>{" "}
           <div className="space-y-2">
             <label
               htmlFor="city"
@@ -200,7 +239,8 @@ export function RegisterComponent() {
               className="block w-full rounded-md border border-[#D9D1CB] bg-[#F0E9E5] px-3 py-2 text-[#7E7E7E] placeholder-[#B3B3B3] shadow-sm focus:border-[#A38D7E] focus:outline-none focus:ring-1 focus:ring-[#A38D7E] sm:text-sm"
               required
             />
-          </div>          <div className="space-y-2">
+          </div>{" "}
+          <div className="space-y-2">
             <label
               htmlFor="street"
               className="text-sm font-medium text-[#A38D7E]"
@@ -211,9 +251,7 @@ export function RegisterComponent() {
               id="street"
               type="text"
               placeholder="123 Street"
-              onChange={(e) =>
-                setData("street", e.target.value)
-              }
+              onChange={(e) => setData("street", e.target.value)}
               value={data.street}
               className="block w-full rounded-md border border-[#D9D1CB] bg-[#F0E9E5] px-3 py-2 text-[#7E7E7E] placeholder-[#B3B3B3] shadow-sm focus:border-[#A38D7E] focus:outline-none focus:ring-1 focus:ring-[#A38D7E] sm:text-sm"
               required

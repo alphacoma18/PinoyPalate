@@ -5,19 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property string $region
- * @property string $municipality
- * @property string $street
- * @property int    $post_code
+ * @property int    $id
+ * @property string $username
+ * @property string $export_type
+ * @property string $template_name
+ * @property string $template_data
  */
-class Address extends Model
+class PmaExportTemplates extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'address';
+    protected $table = 'pma__export_templates';
 
     /**
      * The primary key for the model.
@@ -32,7 +33,7 @@ class Address extends Model
      * @var array
      */
     protected $fillable = [
-        'region_id',  'city', 'municipality', 'street',
+        'username', 'export_type', 'template_name', 'template_data'
     ];
 
     /**
@@ -41,7 +42,7 @@ class Address extends Model
      * @var array
      */
     protected $hidden = [
-
+        
     ];
 
     /**
@@ -50,7 +51,7 @@ class Address extends Model
      * @var array
      */
     protected $casts = [
-        'region_id' => 'string', 'city' => 'string', 'municipality' => 'string', 'street' => 'string'
+        'id' => 'int', 'username' => 'string', 'export_type' => 'string', 'template_name' => 'string', 'template_data' => 'string'
     ];
 
     /**
@@ -59,7 +60,7 @@ class Address extends Model
      * @var array
      */
     protected $dates = [
-
+        
     ];
 
     /**

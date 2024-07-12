@@ -1,7 +1,9 @@
 <?php
 
+namespace Database\Seeders;
+
+use App\Models\Paymentmethod;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class PaymentMethodSeeder extends Seeder
 {
@@ -12,7 +14,7 @@ class PaymentMethodSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('paymentmethod')->insert([
+        Paymentmethod::create([
             ['name' => 'Credit Card'],
             ['name' => 'Debit Card'],
             ['name' => 'PayPal'],

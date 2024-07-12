@@ -5,26 +5,28 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property string $region
- * @property string $municipality
- * @property string $street
- * @property int    $post_code
+ * @property string $master_db
+ * @property string $master_table
+ * @property string $master_field
+ * @property string $foreign_db
+ * @property string $foreign_table
+ * @property string $foreign_field
  */
-class Address extends Model
+class PmaRelation extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'address';
+    protected $table = 'pma__relation';
 
     /**
      * The primary key for the model.
      *
      * @var string
      */
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'master_db';
 
     /**
      * Attributes that should be mass-assignable.
@@ -32,7 +34,7 @@ class Address extends Model
      * @var array
      */
     protected $fillable = [
-        'region_id',  'city', 'municipality', 'street',
+        'master_table', 'master_field', 'foreign_db', 'foreign_table', 'foreign_field'
     ];
 
     /**
@@ -41,7 +43,7 @@ class Address extends Model
      * @var array
      */
     protected $hidden = [
-
+        
     ];
 
     /**
@@ -50,7 +52,7 @@ class Address extends Model
      * @var array
      */
     protected $casts = [
-        'region_id' => 'string', 'city' => 'string', 'municipality' => 'string', 'street' => 'string'
+        'master_db' => 'string', 'master_table' => 'string', 'master_field' => 'string', 'foreign_db' => 'string', 'foreign_table' => 'string', 'foreign_field' => 'string'
     ];
 
     /**
@@ -59,7 +61,7 @@ class Address extends Model
      * @var array
      */
     protected $dates = [
-
+        
     ];
 
     /**

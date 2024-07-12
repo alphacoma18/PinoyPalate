@@ -5,19 +5,23 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property string $region
- * @property string $municipality
- * @property string $street
- * @property int    $post_code
+ * @property int    $id
+ * @property int    $age
+ * @property string $name
+ * @property string $breed
+ * @property string $address
+ * @property string $color
+ * @property float  $height
+ * @property float  $weight
  */
-class Address extends Model
+class Dogs extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'address';
+    protected $table = 'dogs';
 
     /**
      * The primary key for the model.
@@ -32,7 +36,7 @@ class Address extends Model
      * @var array
      */
     protected $fillable = [
-        'region_id',  'city', 'municipality', 'street',
+        'name', 'breed', 'age', 'address', 'color', 'height', 'weight'
     ];
 
     /**
@@ -41,7 +45,7 @@ class Address extends Model
      * @var array
      */
     protected $hidden = [
-
+        
     ];
 
     /**
@@ -50,7 +54,7 @@ class Address extends Model
      * @var array
      */
     protected $casts = [
-        'region_id' => 'string', 'city' => 'string', 'municipality' => 'string', 'street' => 'string'
+        'id' => 'int', 'name' => 'string', 'breed' => 'string', 'age' => 'int', 'address' => 'string', 'color' => 'string', 'height' => 'float', 'weight' => 'float'
     ];
 
     /**
@@ -59,7 +63,7 @@ class Address extends Model
      * @var array
      */
     protected $dates = [
-
+        
     ];
 
     /**

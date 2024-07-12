@@ -16,6 +16,8 @@ class CreateMenuTable extends Migration
             $table->string('item_name')->notNullable();
             $table->decimal('price', 10, 2)->notNullable();
             $table->foreign('restaurant_id')->references('id')->on('restaurant')->onDelete('cascade');
+            $table->unsignedBigInteger('cuisine_id')->notNullable();
+            $table->foreign('cuisine_id')->references('id')->on('cuisine')->onDelete('cascade');
         });
     }
 

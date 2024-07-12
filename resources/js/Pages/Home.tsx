@@ -20,16 +20,16 @@
 // }
 
 
-import { HomeComponent } from "@/Components/Home";
+import { DashboardComponent } from "@/Components/Dashboard";
 import { Head } from "@inertiajs/react";
 
-const Home = () => {
+const Dashboard = () => {
   return (
     <>
-      <Head title="Home" />
-      <HomeComponent />
+      <Head title="Dashboard" />
+      <DashboardComponent />
     </>
   );
 };
 
-export default Home;
+export default Dashboard;

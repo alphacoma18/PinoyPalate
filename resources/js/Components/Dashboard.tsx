@@ -82,7 +82,7 @@ const Menu = () => {
 }
 
 
-export function HomeComponent() {
+export function DashboardComponent() {
   return (
     <div className="flex flex-col min-h-screen bg-[#F0E9E5]">
       <header className="w-full bg-[#f5f5f5] shadow-md">
