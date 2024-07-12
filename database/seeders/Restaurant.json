@@ -3,30 +3,35 @@
         "id": 1,
         "name": "Ong's Retiro Pares",
         "phone": "09171234567",
-        "address_id": 1
+        "address_id": 2,
+        "owner_id": 2
     },
     {
         "id": 2,
         "name": "Ian's McDonald's Branch",
         "phone": "09207654321",
-        "address_id": 2
+        "address_id": 3,
+        "owner_id": 3
     },
     {
         "id": 3,
         "name": "Marc's Exquisite Lugaw",
         "phone": "09398765432",
-        "address_id": 3
+        "address_id": 4,
+        "owner_id": 4
     },
     {
         "id": 4,
         "name": "Pancitan ni Coma",
         "phone": "09454321098",
-        "address_id": 4
+        "address_id": 5,
+        "owner_id": 5
     },
     {
         "id": 5,
         "name": "Beau's Lechon Baboy Express",
         "phone": "09563210987",
-        "address_id": 5
+        "address_id": 6,
+        "owner_id": 6
     }
 ]

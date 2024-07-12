@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "region_id": 3,
+        "city": "Metro Manila",
+        "municipality": "Manila",
+        "street": "Morayta Street, Sampaloc"
+    },
+    {
+        "id": 2,
+        "region_id": 3,
+        "city": "Metro Manila",
+        "municipality": "Manila",
+        "street": "Retiro Street, Sampaloc"
+    },
+    {
+        "id": 3,
+        "region_id": 3,
+        "city": "Metro Manila",
+        "municipality": "Quezon City",
+        "street": "Timog Avenue, South Triangle"
+    },
+    {
+        "id": 4,
+        "region_id": 3,
+        "city": "Metro Manila",
+        "municipality": "Makati City",
+        "street": "Paseo de Roxas, Bel-Air"
+    },
+    {
+        "id": 5,
+        "region_id": 2,
+        "city": "Calabarzon",
+        "municipality": "Lipa City",
+        "street": "Ayala Highway, Mataas na Lupa"
+    },
+    {
+        "id": 6,
+        "region_id": 3,
+        "city": "Central Luzon",
+        "municipality": "Angeles City",
+        "street": "Fields Avenue, Balibago"
+    }
+]

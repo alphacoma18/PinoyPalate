@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "name": "Admin",
+        "email": "alpha.coma.ict@gmail.com",
+        "password": "admin123",
+        "user_type_id": 1,
+        "phone": "+639175678901",
+        "address_id": 1
+    },
+    {
+        "id": 2,
+        "name": "Juan dela Cruz",
+        "email": "juan.delacruz@example.com",
+        "password": "securePassword123",
+        "user_type_id": 2,
+        "phone": "+639175678901",
+        "address_id": 2
+    },
+    {
+        "id": 3,
+        "name": "Maria Rodriguez",
+        "email": "maria.rodriguez@example.com",
+        "password": "securePassword456",
+        "user_type_id": 2,
+        "phone": "+639178765432",
+        "address_id": 3
+    },
+    {
+        "id": 4,
+        "name": "Carlos Garcia",
+        "email": "carlos.garcia@example.com",
+        "password": "securePassword789",
+        "user_type_id": 2,
+        "phone": "+639171234567",
+        "address_id": 4
+    },
+    {
+        "id": 5,
+        "name": "Pedro Martinez",
+        "email": "pedro.martinez@example.com",
+        "password": "securePassword101",
+        "user_type_id": 2,
+        "phone": "+639176543210",
+        "address_id": 5
+    },
+    {
+        "id": 6,
+        "name": "Isabel Perez",
+        "email": "isabel.perez@example.com",
+        "password": "securePassword112",
+        "user_type_id": 2,
+        "phone": "+639179876543",
+        "address_id": 6
+    }
+]
