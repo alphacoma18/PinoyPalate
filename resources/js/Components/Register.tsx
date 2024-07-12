@@ -26,6 +26,32 @@ To read more about using these font, please visit the Next.js documentation:
 import { FormEventHandler, useEffect } from "react";
 import { useForm } from "@inertiajs/react";
 
+const cuisineOptions = [
+  {
+    id: 1,
+    name: "Savory",
+  },
+  {
+    id: 2,
+    name: "Sweet",
+  },
+  {
+    id: 3,
+    name: "Sour",
+  },
+  {
+    id: 4,
+    name: "Bittery",
+  },
+  {
+    id: 5,
+    name: "Vegan",
+  },
+  {
+    id: 6,
+    name: "Bread",
+  },
+];
 
 export function RegisterComponent() {
   const { data, setData, post, errors, reset } = useForm({
@@ -37,7 +63,7 @@ export function RegisterComponent() {
     city: "Metro Manila",
     municipality: "Manila",
     street: "17th Street",
-    preferredCuisines: [],
+    preferredCuisines: [1, 2, 3, 4, 5, 6],
   });
 
   useEffect(() => {
@@ -263,84 +289,35 @@ export function RegisterComponent() {
             Preferred Cuisines
           </label>
           <div className="grid grid-cols-3 gap-2">
-            <div className="flex items-center space-x-2">
-              <input
-                id="cuisine-savory"
-                type="checkbox"
-                className="h-4 w-4 rounded border-[#D9D1CB] bg-[#F0E9E5] text-[#A38D7E] focus:ring-[#A38D7E]"
-              />
+            {cuisineOptions.map((cuisine) => (
               <label
-                htmlFor="cuisine-savory"
-                className="text-[#7E7E7E]"
+                key={cuisine.id}
+                className="flex items-center space-x-2 text-sm text-[#7E7E7E]"
               >
-                Savory
+                <input
+                  type="checkbox"
+                  value={cuisine.id}
+                  checked={data.preferredCuisines.includes(cuisine.id)}
+                  onChange={(e) => {
+                    if (e.target.checked) {
+                      setData("preferredCuisines", [
+                        ...data.preferredCuisines,
+                        cuisine.id,
+                      ]);
+                    } else {
+                      setData(
+                        "preferredCuisines",
+                        data.preferredCuisines.filter(
+                          (id) => id !== cuisine.id
+                        )
+                      );
+                    }
+                  }}
+                  className="rounded-md text-[#A38D7E] focus:ring-[#A38D7E] focus:ring-offset-[#F0E9E5] focus:ring-1"
+                />
+                <span>{cuisine.name}</span>
               </label>
-            </div>
-            <div className="flex items-center space-x-2">
-              <input
-                id="cuisine-sweet"
-                type="checkbox"
-                className="h-4 w-4 rounded border-[#D9D1CB] bg-[#F0E9E5] text-[#A38D7E] focus:ring-[#A38D7E]"
-              />
-              <label
-                htmlFor="cuisine-sweet"
-                className="text-[#7E7E7E]"
-              >
-                Sweet
-              </label>
-            </div>
-            <div className="flex items-center space-x-2">
-              <input
-                id="cuisine-sour"
-                type="checkbox"
-                className="h-4 w-4 rounded border-[#D9D1CB] bg-[#F0E9E5] text-[#A38D7E] focus:ring-[#A38D7E]"
-              />
-              <label
-                htmlFor="cuisine-sour"
-                className="text-[#7E7E7E]"
-              >
-                Sour
-              </label>
-            </div>
-            <div className="flex items-center space-x-2">
-              <input
-                id="cuisine-bittery"
-                type="checkbox"
-                className="h-4 w-4 rounded border-[#D9D1CB] bg-[#F0E9E5] text-[#A38D7E] focus:ring-[#A38D7E]"
-              />
-              <label
-                htmlFor="cuisine-bittery"
-                className="text-[#7E7E7E]"
-              >
-                Bittery
-              </label>
-            </div>
-            <div className="flex items-center space-x-2">
-              <input
-                id="cuisine-vegan"
-                type="checkbox"
-                className="h-4 w-4 rounded border-[#D9D1CB] bg-[#F0E9E5] text-[#A38D7E] focus:ring-[#A38D7E]"
-              />
-              <label
-                htmlFor="cuisine-vegan"
-                className="text-[#7E7E7E]"
-              >
-                Vegan
-              </label>
-            </div>
-            <div className="flex items-center space-x-2">
-              <input
-                id="cuisine-bread"
-                type="checkbox"
-                className="h-4 w-4 rounded border-[#D9D1CB] bg-[#F0E9E5] text-[#A38D7E] focus:ring-[#A38D7E]"
-              />
-              <label
-                htmlFor="cuisine-bread"
-                className="text-[#7E7E7E]"
-              >
-                Bread
-              </label>
-            </div>
+            ))}
           </div>
         </div>
         <div className="flex justify-end">

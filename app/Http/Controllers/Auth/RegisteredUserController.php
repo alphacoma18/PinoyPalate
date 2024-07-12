@@ -67,11 +67,12 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($validated['password']),
             'phone' => $validated['phone'],
             'address_id' => $address->id,
+            'user_type_id' => 2,
         ]);
         $user->save();
 
 
-        // // create preferred cuisines for each cuisine of user
+        // create preferred cuisines for each cuisine of user
         // foreach ($validated['preferredCuisine'] as $cuisine) {
         //     $preferredCuisine = new PreferredCuisine();
         //     $preferredCuisine->cuisine_id = $cuisine;

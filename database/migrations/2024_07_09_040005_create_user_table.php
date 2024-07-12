@@ -14,7 +14,7 @@ class CreateUserTable extends Migration
             $table->string('email')->notNullable()->unique();
             $table->string('password')->notNullable();
             $table->string('phone')->notNullable();
-            $table->unsignedBigInteger('user_type_id')->notNullable();
+            $table->unsignedBigInteger('user_type_id')->notNullable()->default(2);
             $table->foreign('user_type_id')->references('id')->on('user_type')->onDelete('cascade');
             $table->unsignedBigInteger('address_id')->notNullable();
             $table->foreign('address_id')->references('id')->on('address')->onDelete('cascade');
