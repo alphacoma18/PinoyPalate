@@ -38,8 +38,6 @@ PinoyPalate brings the authentic taste of Filipino cusine right to your doorstep
     cp .env.example .env
     ```
 
-    Note: Mailer environment variables should be
-
 5. Generate an application key
 
     ```bash
