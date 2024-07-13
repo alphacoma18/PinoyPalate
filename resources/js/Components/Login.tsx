@@ -2,7 +2,7 @@ import { FormEventHandler, useEffect } from "react";
 import { useForm } from "@inertiajs/react";
 
 export default function LoginComponent() {
-  const { data, setData, post, reset } = useForm({
+  const { data, setData, post, errors, reset } = useForm({
     email: "",
     password: "",
     remember: false,
@@ -30,6 +30,13 @@ export default function LoginComponent() {
             <h1 className="text-3xl font-bold tracking-tighter text-[#A38D7E] sm:text-4xl">
               Sign in to PinoyPalate
             </h1>
+            <span>
+              {errors.email && (
+                <p className="text-red-500 text-sm">
+                  {errors.email}
+                </p>
+              )}
+            </span>
             <p className="text-[#7E7E7E] text-balance">
               Enter your email and password to access your
               account.

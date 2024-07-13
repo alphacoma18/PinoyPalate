@@ -5,77 +5,38 @@
  */
 "use client";
 
-import { useState } from "react";
-// import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { useState, useEffect } from "react";
 import { Dialog, DialogContent } from "./ui/dialog";
 import { Button } from "./ui/button";
 
-interface MenuItemProp {
-    title: string;
-    href: string;
-}
+import { usePage } from "@inertiajs/react";
+import getImagePath from "@/lib/getImagePath";
 
-interface DishProp {
+interface MenuProp {
     id: number;
     name: string;
-    region: string;
-    price: number;
-    rating: number;
-    image: string;
+    phone: string;
+    address_id: number;
+    owner_id: number;
+    created_at: string;
+    updated_at: string;
     description: string;
-    restaurant: string;
+    origin: string;
+    item_name: string;
+    image_url: string;
+    price: string;
+    restaurant_id: number;
+    cuisine_id: number;
+    cuisine_name: string;
 }
 
+
 export default function MenuComponent() {
+    const menu = usePage().props.menu as MenuProp[];
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [selectedDish, setSelectedDish] = useState<DishProp | null>(null);
+    const [selectedDish, setSelectedDish] = useState<MenuProp | null>(null);
     const [quantity, setQuantity] = useState(1);
-    const dishes: DishProp[] = [
-        {
-            id: 1,
-            name: "Adobo",
-            region: "Luzon",
-            price: 649.99,
-            rating: 4.8,
-            image: "/adobo.jpg",
-            description:
-                "A classic Filipino dish made with chicken or pork, simmered in a savory sauce of soy sauce, vinegar, garlic, and spices.",
-            restaurant: "Pinoy Eats",
-        },
-        {
-            id: 2,
-            name: "Lumpia",
-            region: "Visayas",
-            price: 449.99,
-            rating: 4.5,
-            image: "/lumpia.jpg",
-            description:
-                "Delicate spring rolls filled with a mixture of ground pork, vegetables, and seasonings.",
-            restaurant: "Pinoy Eats",
-        },
-        {
-            id: 3,
-            name: "Sisig",
-            region: "Pampanga",
-            price: 749.99,
-            rating: 4.7,
-            image: "/sisig.jpg",
-            description:
-                "A sizzling dish made with chopped pork, liver, and chili peppers, seasoned with calamansi and served on a hot plate.",
-            restaurant: "Pinoy Eats",
-        },
-        {
-            id: 4,
-            name: "Halo-Halo",
-            region: "Mindanao",
-            price: 349.99,
-            rating: 4.9,
-            image: "/halo-halo.jpg",
-            description:
-                "A refreshing dessert made with shaved ice, evaporated milk, and a variety of sweet ingredients like beans, jelly, and ice cream.",
-            restaurant: "Pinoy Eats",
-        },
-    ];
+
     const handleDishClick = (dish: any) => {
         setSelectedDish(dish);
         setIsModalOpen(true);
@@ -94,8 +55,9 @@ export default function MenuComponent() {
     };
     return (
         <>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4 md:px-6 py-8">
-                {dishes.map((dish) => (
+                {menu.map((dish) => (
                     <div
                         key={dish.id}
                         className="relative overflow-hidden rounded-lg shadow-lg cursor-pointer hover:shadow-xl transition-shadow"
@@ -103,24 +65,24 @@ export default function MenuComponent() {
                     >
                         <div className="relative">
                             <img
-                                src="/placeholder.svg"
-                                alt={dish.name}
+                                src={getImagePath(dish.image_url)}
+                                alt={dish.item_name}
                                 className="w-full h-48 object-cover"
                             />
                             <div className="absolute top-2 right-2 bg-primary text-primary-foreground px-2 py-1 rounded-md text-sm font-medium">
-                                {dish.rating.toFixed(1)}
+                                4.9
                             </div>
                             <div className="absolute bottom-2 left-2 bg-background text-foreground px-2 py-1 rounded-md text-sm font-medium">
-                                ₱{dish.price.toFixed(2)}
+                                ₱{dish.price}
                             </div>{" "}
                         </div>
 
                         <div className="p-4">
                             <h3 className="text-lg font-semibold">
-                                {dish.name}
+                                {dish.item_name}
                             </h3>
                             <p className="text-muted-foreground">
-                                {dish.region}
+                                {dish.cuisine_name}
                             </p>
                         </div>
                     </div>
@@ -133,8 +95,8 @@ export default function MenuComponent() {
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div>
                                 <img
-                                    src="/placeholder.svg"
-                                    alt={selectedDish.name}
+                                    src={getImagePath(selectedDish.image_url)}
+                                    alt={selectedDish.item_name}
                                     width={800}
                                     height={450}
                                     className="w-full h-auto object-cover rounded-lg aspect-video"
@@ -143,10 +105,10 @@ export default function MenuComponent() {
                             <div className="space-y-4">
                                 <div>
                                     <h2 className="text-2xl font-bold">
-                                        {selectedDish.name}
+                                        {selectedDish.item_name}
                                     </h2>
                                     <p className="text-muted-foreground">
-                                        {selectedDish.restaurant}
+                                        {selectedDish.name}
                                     </p>
                                 </div>
                                 <p>{selectedDish.description}</p>
@@ -154,11 +116,12 @@ export default function MenuComponent() {
                                     <div className="flex items-center gap-2">
                                         <StarIcon className="w-5 h-5 fill-primary" />
                                         <span className="text-lg font-semibold">
-                                            {selectedDish.rating.toFixed(1)}
+                                            4.9
+                                            {/* {selectedDish.rating.toFixed(1)} */}
                                         </span>
                                     </div>
                                     <div className="text-lg font-semibold">
-                                        ₱{selectedDish.price.toFixed(2)}
+                                        ₱{selectedDish.price}
                                     </div>
                                 </div>
                                 <div className="flex items-center justify-between gap-4">

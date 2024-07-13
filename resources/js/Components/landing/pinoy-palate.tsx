@@ -33,7 +33,7 @@ export function PinoyPalate() {
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-[#8b5e3c]">
-                Discover the Flavors of the Philippines
+                Taste the Best of the Philippines Anytime, Anywhere!
               </h2>
               <p className="max-w-[900px] text-[#8b5e3c] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 PinoyPalate offers a diverse menu of authentic Filipino dishes, each crafted with the finest

@@ -10,11 +10,12 @@ class CreateMenuTable extends Migration
     {
         Schema::create('menu', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('restaurant_id')->notNullable();
             $table->string('description')->nullable();
             $table->string('origin')->notNullable();
             $table->string('item_name')->notNullable();
+            $table->string('image_url')->notNullable();
             $table->decimal('price', 10, 2)->notNullable();
+            $table->unsignedBigInteger('restaurant_id')->notNullable();
             $table->foreign('restaurant_id')->references('id')->on('restaurant')->onDelete('cascade');
             $table->unsignedBigInteger('cuisine_id')->notNullable();
             $table->foreign('cuisine_id')->references('id')->on('cuisine')->onDelete('cascade');

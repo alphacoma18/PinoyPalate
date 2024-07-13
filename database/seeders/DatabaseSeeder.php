@@ -53,6 +53,19 @@ class DatabaseSeeder extends Seeder
             echo "ID: " . $restaurant['id'] . ", Owner ID: " . $restaurant['owner_id'] . "\n";
         }
 
+        // Insert cuisines
+        DB::table('cuisine')->insert([
+            ['name' => 'Savory'],
+            ['name' => 'Sweet'],
+            ['name' => 'Sour'],
+            ['name' => 'Bittery'],
+            ['name' => 'Vegan'],
+            ['name' => 'Bread'],
+        ]);
+
+        $menu = json_decode(File::get(storage_path('app/public/Menu.json')), true);
+        DB::table('menu')->insert($menu);
+
         // Insert order statuses
         DB::table('orderstatus')->insert([
             ['status_name' => 'Pending'],
@@ -70,14 +83,5 @@ class DatabaseSeeder extends Seeder
             ['name' => 'Cash On Delivery']
         ]);
 
-        // Insert cuisines
-        DB::table('cuisine')->insert([
-            ['name' => 'Savory'],
-            ['name' => 'Sweet'],
-            ['name' => 'Sour'],
-            ['name' => 'Bittery'],
-            ['name' => 'Vegan'],
-            ['name' => 'Bread'],
-        ]);
     }
 }

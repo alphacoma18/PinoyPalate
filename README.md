@@ -1,46 +1,81 @@
-# Laravel + shadcn/ui + InertiaJS Starter Template
+# PinoyPalate
 
-![Laravel + shadcn/ui + InertiaJS Starter Template](https://raw.githubusercontent.com/mahmudz/laravel-shadcn-app-panel/main/public/repository-cover.png)
-
-This a template to start building a custom user/admin panel quickly.
-Feel free to customize this template to fit the specific needs and details of your Laravel application!
+PinoyPalate brings the authentic taste of Filipino cusine right to your doorstep. Order now and experience the vibrant flavors of the Philippines.
 
 ## Technologies
 
-- [Laravel 11](https://laravel.com/docs/)
-- [shadcn/ui](https://ui.shadcn.com/docs)
-- [InertiaJS](https://inertiajs.com/)
-
-## Prerequisites
-
-Before you begin, ensure you have met the following requirements:
-
-- PHP >= 8.2
-- Composer (for package management)
-- Node.js & npm (for frontend dependencies)
-- MySQL or another [compatible database](https://laravel.com/docs/11.x/database#configuration)
+- PHP Laravel
+- MySQL
+- React + Typescript
+- Tailwind CSS
+- ShadcnUI
+- V0
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/mahmudz/laravel-shadcn-app-panel.git`
-2. Navigate into the project directory: `cd [project directory]`
-3. Install PHP dependencies: `composer install`
-4. Copy `.env.example` to `.env` and configure your environment variables, including database settings and application key.
-5. Generate application key: `php artisan key:generate`
-6. Run database migrations: `php artisan migrate`
-7. Optionally, seed the database: `php artisan db:seed`
-8. Install frontend dependencies: `npm install && npm run dev` (for development) or `npm install && npm run production` (for production)
+1. Clone the repository
 
-## Usage
+    ```bash
+    git clone https://github.com/alphacoma18/PinoyPalate.git PinoyPalate
+    ```
 
-To start the development server, run:
+2. Change directory
 
-```
-php artisan serve
-```
+    ```bash
+    cd PinoyPalate
+    ```
 
-Access the application in your browser at `http://localhost:8000` by default.
+3. Install dependencies
 
-## Contact
+    ```bash
+    composer install
+    npm install
+    ```
 
-If you have any questions, feedback, or support requests, you can reach me here [mahmudbappy.pri@gmail.com](https://github.com/mahmudz/laravel-shadcn-app-panel.git)
+4. Create a `.env` file
+
+    ```bash
+    cp .env.example .env
+    ```
+
+    Note: Mailer environment variables should be
+
+5. Generate an application key
+
+    ```bash
+    php artisan key:generate
+    ```
+
+6. Start LAMP server
+
+    ```bash
+    sudo /opt/lampp/lampp start
+    ```
+
+7. Create and seed the database
+
+    ```bash
+     php artisan migrate:fresh --seed --force
+    ```
+
+8. Run vite server on terminal 1
+
+    ```bash
+    npm run dev
+    ```
+
+9. Run development server on terminal 2
+
+    ```bash
+    php artisan serve
+    ```
+
+10. Open the application on your browser on `http://127.0.0.1:8000`
+
+## Members
+
+- Coma, Alpha Romer
+- Ong, Job Isaac
+- Olata, Marc
+- Sioson, Kristoffer Ian
+- Sison, Beau Lawyjet

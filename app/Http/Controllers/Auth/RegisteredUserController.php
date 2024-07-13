@@ -71,15 +71,6 @@ class RegisteredUserController extends Controller
         ]);
         $user->save();
 
-
-        // create preferred cuisines for each cuisine of user
-        // foreach ($validated['preferredCuisine'] as $cuisine) {
-        //     $preferredCuisine = new PreferredCuisine();
-        //     $preferredCuisine->cuisine_id = $cuisine;
-        //     $preferredCuisine->user_id = $user->id;
-        //     $preferredCuisine->save();
-        // }
-
         event(new Registered($user));
 
         Auth::login($user);
